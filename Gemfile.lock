@@ -200,7 +200,7 @@ GEM
       coderay (~> 1.1)
       method_source (~> 1.0)
     public_suffix (4.0.5)
-    puma (4.2.1)
+    puma (4.3.5)
       nio4r (~> 2.0)
     rack (2.2.3)
     rack-livereload (0.3.17)
@@ -338,7 +338,7 @@ DEPENDENCIES
   mail
   mini_magick
   pg (>= 1.1.4, < 2.0)
-  puma (~> 4.2.1)
+  puma (~> 4.3.5)
   rack-livereload
   rails (~> 6.0.2.2)
   rb-fsevent
