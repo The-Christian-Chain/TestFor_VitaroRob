@@ -1,0 +1,162 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Settings page</h1>
+
+<h3>Basic Information</h3>
+<p>
+  <strong>Author:</strong>
+  <%= @setting.author %>
+</p>
+
+<p>
+  <strong>Ministry Name:</strong>
+  <%= @setting.ministry_name %>
+</p>
+
+<p>
+  <strong>Site Name:</strong>
+  <%= @setting.site_name %>
+</p>
+
+<p>
+  <strong>Keywords:</strong>
+  <%= @setting.keywords %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @setting.description %>
+</p>
+
+<p>
+  <strong>Motto:</strong>
+  <%= @setting.motto %>
+</p>
+
+<p>
+  <strong>Launch Date:</strong>
+  <%= @setting.launch_date %>
+</p>
+
+<p>
+  <strong>Google Analytics Tracking Code:</strong>
+  <%= @setting.google_analytics %>
+</p>
+
+
+<h3>Design Settings</h3>
+<p>
+  <strong>Primary Color:</strong>
+  <span style="color: <%= @setting.primary_color %>"><%= @setting.primary_color %></span>
+</p>
+
+<p>
+  <strong>Secondary Color:</strong>
+  <span style="color: <%= @setting.secondary_color %>"><%= @setting.secondary_color %></span>
+</p>
+
+<p>
+  <strong>Logo:</strong><br>
+  <%= image_tag @setting.logo %>
+</p>
+
+<p>
+  <strong>Favicon:</strong><br>
+  <%= image_tag @setting.favicon %>
+</p>
+
+<p>
+  <strong>Apple Touch Icon:</strong><br>
+  <%= image_tag @setting.apple_touch %>
+</p>
+
+<p>
+  <strong>Apple Touch Icon (152x152):</strong><br>
+  <%= image_tag @setting.apple_touch_152 %>
+</p>
+
+<p>
+  <strong>Apple Touch Icon (167x167):</strong><br>
+  <%= image_tag @setting.apple_touch_167 %>
+</p>
+
+<p>
+  <strong>Apple Touch Icon (180x180):</strong><br>
+  <%= image_tag @setting.apple_touch_180 %>
+</p>
+
+<p>
+  <strong>Apple Touch Icon Startup:</strong><br>
+  <%= image_tag @setting.apple_touch_startup %>
+</p>
+
+<h3>Contact Settings</h3>
+
+<p>
+  <strong>Website:</strong>
+  <%= @setting.website %>
+</p>
+
+<p>
+  <strong>Contact Email:</strong>
+  <%= @setting.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @setting.phone %>
+</p>
+
+<p>
+  <strong>Address 1:</strong>
+  <%= @setting.address1 %>
+</p>
+
+<p>
+  <strong>Address 2:</strong>
+  <%= @setting.address2 %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @setting.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @setting.state %>
+</p>
+
+<p>
+  <strong>Zip Code:</strong>
+  <%= @setting.zip_code %>
+</p>
+
+<h3>Social Settings</h3>
+
+<p>
+  <strong>Facebook:</strong>
+  <%= @setting.facebook %>
+</p>
+
+<p>
+  <strong>Twitter:</strong>
+  <%= @setting.twitter %>
+</p>
+
+<p>
+  <strong>Instagram:</strong>
+  <%= @setting.instagram %>
+</p>
+
+<p>
+  <strong>Pinterest:</strong>
+  <%= @setting.pinterest %>
+</p>
+
+<p>
+  <strong>LinkedIn:</strong>
+  <%= @setting.linkedin %>
+</p>
+
+<%= link_to 'Edit', edit_settings_path %>

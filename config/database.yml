@@ -1,0 +1,47 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  primary:
+    <<: *default
+    database: BrokenAppForTest_primary
+    migrations_paths: db/primary_migrate
+
+  primary_replica:
+    <<: *default
+    database: BrokenAppForTest_primary_replica
+    replica: true
+
+  site:
+    <<: *default
+    database: BrokenAppForTest_site
+    migrations_paths: db/site_migrate
+
+  site_replica:
+    <<: *default
+    database: BrokenAppForTest_site_replica
+    replica: true
+
+  blog:
+    <<: *default
+    database: BrokenAppForTest_blog
+    migrations_paths: db/blog_migrate
+
+  blog_replica:
+    <<: *default
+    database: BrokenAppForTest_blog_replica
+    replica: true
+
+
+# WILL NEED TO UPDATE THESE SECTIONS WHEN READY TO DO TESTING AND PRODUCTION
+test:
+  <<: *default
+  database: BrokenAppForTest_test
+
+production:
+  <<: *default
+  database: BrokenAppForTest_production
+  username: BrokenAppForTest
+  password: <%= ENV['BrokenAppForTest_DATABASE_PASSWORD'] %>

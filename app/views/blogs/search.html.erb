@@ -1,0 +1,35 @@
+<h1>Search results for '<%= @criteria %>'</h1>
+
+<h4>Categories</h4>
+
+<% if @categories.count == 0 %>
+	<p>Nothing was found in categories that matched your search criteria.</p>
+<% else %>
+	<% @categories.each do |category| %>
+		<p><%= category.name %></p>
+	<% end %>
+<% end %>
+
+<h4>Tags</h4>
+
+<% if @tags.count == 0 %>
+	<p>Nothing was found in tags that matched your search criteria.</p>
+<% else %>
+	<% @tags.each do |tag| %>
+		<p><%= tag.name %></p>
+	<% end %>
+<% end %>
+
+<h4>Posts</h4>
+<% if @posts.count == 0 %>
+
+	<p>Nothing was found in posts that matched your search criteria.</p>
+<% else %>
+	<% @posts.each do |post| %>
+		
+		Found <%=  count_search_criteria(post.title, @criteria) + count_search_criteria(post.excerpt, @criteria) + count_search_criteria(post.content, @criteria) %> instance of '<%= @criteria %>' in the following post.
+		<h5><%= link_to post.title, post %></h5>
+	    <p>By: <%= post.member.profile.first_name + " " + post.member.profile.last_name %></br>
+	    <%= post.excerpt %><%= link_to "...more", post %></p>
+	<% end %>
+<% end %>

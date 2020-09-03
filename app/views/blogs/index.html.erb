@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<%= form_for @search do |s| %>
+  <%= s.text_field :criteria %>
+
+  <div class="actions">
+    <%= s.submit "Search" %>
+  </div>
+<% end %>
+
+<% if @can_create_post %>
+	<%= link_to 'New Post', new_post_path %>
+<% end %>
+
+<hr>
+
+<h4>Sections</h4>
+<p><%= section_links(@sections) %></p>
+
+<h4>Categories</h4>
+<p><%= category_links(@categories) %></p>
+
+<h4>Tags</h4>
+<p><%= tag_links(@tags) %></p>
+
+<hr>
+
+
+<h4>Posts</h4>
+<% @posts.each do |post| %>
+  <div>
+    <h5><%= link_to post.title, post %></h5>
+    <% 
+    	author_name = post.member.profile.first_name + " " + post.member.profile.last_name
+    	author_username = post.member.profile.user_name
+    %>
+    <p>By: <%= link_to author_name, author_path(author_username) %></br>
+    <%= post.excerpt %><%= link_to "...more", post %></p>
+  </div>
+<% end %>

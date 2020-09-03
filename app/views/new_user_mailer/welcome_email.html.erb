@@ -1,0 +1,8 @@
+<h1>Welcome to the site<%= @profile.first_name.blank? ? "!" " " + @profile.first_name + "!" %></h1>
+<p>We are so glad to have you here. Your user name is listed below along with the login URL in case you need that again.</p>
+<p>User Name: <%= @profile.user_name %></p>
+<p>Email: <%= @member.email %></p>
+<p>Login URL: <%= link_to "Click Here to Login", new_member_session_path %> (<%= new_member_session_url %>)</p>
+<br>
+<p>Signed,</p>
+<p>The Gurus</p>

@@ -1,0 +1,30 @@
+<%%= form_with(model: <%= model_resource_name %>) do |f| %>
+  <% attributes.each do |attribute| -%>
+    <div class="input-group mb-3">
+      <% if attribute.password_digest? -%>
+          <div class="input-group-prepend">
+            <%%= f.label :password, class: "input-group-text", for: "password" %>
+          </div>
+          <%%= f.password_field :password, class: "form-control", type:"text", id:"password" %>
+
+          <div class="input-group-prepend">
+            <%%= f.label :password_confirmation, class: "input-group-text", for: "password_confirmation" %>
+          </div>
+          <%%= f.password_field :password_confirmation, class: "form-control", type:"text", id:"password_confirmation" %>
+      <% else -%>
+          <div class="input-group-prepend">
+            <%%= f.label :<%= attribute.column_name %>, class: "input-group-text", for: "<%= attribute.column_name %>" %>
+          </div>
+          <%%= f.<%= attribute.field_type %> :<%= attribute.column_name %>, class: "form-control", type:"text", id:"<%= attribute.column_name %>" %>
+      <% end -%>
+    </div>
+  <% end -%>
+
+  <div style="float:right;">
+    <%%= f.button class: "btn btn-primary" %>
+    
+    <%% if f.object.persisted? %>
+      <%%= link_to 'Delete', f.object, class: "btn btn-danger", style:"color:white;", method: :delete, data: { remote: true, confirm: "Are you sure?" } %>
+    <%% end %>
+  </div>
+<%% end %>

@@ -1,0 +1,29 @@
+<% @page_layout = 'main' %>
+<section id="hero-sub">
+  <div class="hero-container">
+    <h1>Create Your Profile!</h1>
+    <h2>Now that you are registered, let's create your profile.</h2>
+  </div>
+</section>
+
+
+<main id="main">
+  <%= render 'shared/alerts' %>
+  <section id="support_page"><div class="container">
+
+    <% if @registration_step == 'user_name' %>
+      <%= render 'profiles/setup_profile/user_name', registration_step: @registration_step %>
+    <% elsif @registration_step == 'personal' %>
+      <%= render 'profiles/setup_profile/personal', registration_step: @registration_step %>
+    <% elsif @registration_step == 'social' %>
+      <%= render 'profiles/setup_profile/social', registration_step: @registration_step %>
+    <% elsif @registration_step == 'complete' %>
+      <%= render 'profiles/setup_profile/complete', registration_step: @registration_step %>
+    <% else %>
+      <script type="text/javascript">
+        window.location.href="<%= member_profile_path(@profile.user_name) %>"
+      </script>
+    <% end %>
+
+  </div></section>    
+</main> 

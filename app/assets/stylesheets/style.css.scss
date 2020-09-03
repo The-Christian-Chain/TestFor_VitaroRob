@@ -1,0 +1,51 @@
+/*-- Custom CSS --*/
+
+.jumbotron{
+    height: 80vh;
+}
+
+.modal-member-body{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.modal-member-body .row{
+  margin: 0px 0px 0px 0px;
+}
+
+.modal-member-body .left-col{
+  background-color: #e3e3e3;
+  border-radius: 0px 0px 0px 5px;
+  padding: 10px 10px 10px 15px;
+}
+
+.modal-member-body .right-col{
+  border-radius: 0px 0px 0px 5px;
+  padding: 10px 10px 10px 15px;
+}
+
+.login-form-field{
+  display: block;
+    height: 32px;
+    font-size: 12px;
+    font-family: Arial,'Liberation Sans',FreeSans,Sans-Serif;
+    color: #666;
+    margin: 0 0 10px 0;
+    width: 224px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 0 12px;
+}
+
+.login-form-field textarea, input[type="email"], input[type="password"]{
+  width: 200px;
+}
+
+.login-link{
+  font-size: 10px;
+}
+
+.login-text{
+  font-size: 12px;
+}

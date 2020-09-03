@@ -1,0 +1,17 @@
+<%= link_to 'Back to Post List', blog_path %> 
+
+<% if @can_edit_post %>
+  | <%= link_to 'Edit', edit_post_path(@post) %> 
+<% end %>
+
+<% if @post.deleted_at.nil? && @can_delete_post %>
+  | <%= link_to 'Delete Post', @post, method: :post, data: { confirm: 'Marking for deletion' } %>
+<% end %>
+
+<% if @post.deleted_at.nil? == false && @can_recover_post %>
+  | <%= link_to 'Recover Post', @post, method: :post, data: { confirm: 'Recovering' } %>
+<% end %>
+
+<% if @can_destroy_post %>
+  | <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>

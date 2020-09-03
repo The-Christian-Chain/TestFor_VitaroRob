@@ -1,0 +1,90 @@
+<h3>Step 2: Now let's update your personal information.</h3>
+
+<%= form_with(model: @profile, local: true) do |f| %>
+  <%= render 'profiles/setup_profile/form/errors' %>
+
+  <div class="row">
+    <div class="col-5">
+        Profile Picture: 
+        <%= f.file_field :avatar, id: :profile_avatar, class: "form-control" %>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-5">
+      <div class="form-group">
+        Name: 
+        <div class="row">
+          <div class="col-5">
+          <%= f.text_field :first_name, id: :profile_first_name, class: "form-control", placeholder: "First Name" %>
+          </div>
+          <div class="col-7">
+          <%= f.text_field :last_name, id: :profile_last_name, class: "form-control", placeholder: "Last Name" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        Motto: 
+        <%= f.text_area :motto, id: :profile_motto, class: "form-control", placeholder: "" %>
+      </div>
+
+      <div class="form-group">
+        <% 
+          @end_year = Date.today.year-12 
+          @start_year = Date.today.year-100
+        %>
+
+        Birthday: 
+        <%= f.date_select :birthday, id: :profile_birthday, :start_year => @start_year, :end_year => @end_year, add_month_numbers: true, :order => [:month, :day, :year ], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, help: "You must be 12 years or older to have an account.", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        Gender: 
+        Male <%= f.radio_button :gender, 'Male' %>
+        Female <%= f.radio_button :gender, 'Female' %>
+      </div>
+    </div>
+
+    <div class="col-7">
+      <div class="form-group">
+        Phone: 
+        <%= f.text_field :phone, id: :profile_phone, class: "form-control", placeholder: '123-456-7890' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.text_field :address1, id: :profile_address1, class: "form-control", placeholder: "Address" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.text_field :address2, id: :profile_address2, class: "form-control", placeholder: "Address 2" %>
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-5"> 
+            <%= f.text_field :city, id: :profile_city, class: "form-control", placeholder: "City" %>
+          </div>
+
+          <div class="col-4">
+            <div class="dropdown">
+              <%= f.select :state, options_for_select(us_states), id: :profile_state, include_blank: "Select State", class: "btn btn-secondary dropdown-toggle", 'data-toggle' => "dropdown" %>
+            </div>
+          </div>        
+
+          <div class="col-3">
+            <%= f.text_field :zip_code, id: :profile_zip_code, class: "form-control", placeholder: "Zip Code" %>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <%= f.hidden_field :reg_step, value: '4' %>
+
+    <div class="actions">
+      <%= f.submit 'Next Step', class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

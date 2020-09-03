@@ -1,0 +1,41 @@
+<div class="container">
+  <h1><%= plural_table_name.titleize %></h1>
+
+  <%% if @<%= plural_table_name %>.exists? %>
+    <span style="float:right;"><%%= link_to link_to raw('New <i class="fa fa-plus"></i>'), new_<%= singular_route_name %>_path %></span>
+    <div class="bg-white rounded shadow">
+      <table class="table table-striped table-hover">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">#</th>
+<% attributes.reject(&:password_digest?).each do |attribute| -%>
+            <th><%= attribute.human_name %></th>
+<% end %>
+            <th colspan="3" style="white-space: nowrap; width: 1%;">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+        <%% 
+          @i = 1
+          @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
+          <tr>
+              <th scope="row"><%%= @i %></th>
+            <% attributes.reject(&:password_digest?).each do |attribute| -%>
+              <td><%%= <%= singular_table_name %>.<%= attribute.column_name %> %></td>
+            <% end %>
+              <td><%%= link_to raw('<i class="fa fa-eye fa-2x"></i>'), <%= singular_table_name %> %></td>
+              <td><%%= link_to raw('<i class="fa fa-edit fa-2x"></i>'), edit_<%= singular_table_name %>_path(<%= singular_table_name %>) %></td>
+              <td><%%= link_to raw('<i class="fa fa-trash fa-2x"></i>'), <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+          <%% @i=@i+1 %>
+        <%% end %>
+        </tbody>
+      </table>
+    </div>
+  <%% else %>
+    <div class="text-center">
+      <p class="lead">Create your first <%= singular_table_name.titleize %></p>
+      <%%= link_to 'New <%= singular_table_name.titleize %>', new_<%= singular_route_name %>_path, class: "btn btn-primary", style:"color:white;" %>
+    </div>
+  <%% end %>
+</div>

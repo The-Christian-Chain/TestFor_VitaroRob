@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%= render 'shared/google_analytics' %>
+    
+    <meta charset="utf-8">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <!-- Layout Specific Meta -->
+    <% if @page_layout == 'main' %>
+      <meta name="viewport" content='width=device-width, initial-scale=1.0, maximum-scale=1.0, utf-8ser-scalable=0, shrink-to-fit=no' />
+    <% elsif @page_layout == 'sub_page' %>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <% elsif @page_layout == 'blog' %>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <% elsif @page_layout == 'dashboard' %>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <% else %>  
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <% end %>
+
+    <!-- Favicons -->
+    <link href="https://s3-us-west-1.amazonaws.com/tcc-development/favicon.png" rel="icon">
+    <link rel="apple-touch-icon" href="https://s3-us-west-1.amazonaws.com/tcc-development/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://s3-us-west-1.amazonaws.com/tcc-development/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="https://s3-us-west-1.amazonaws.com/tcc-development/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://s3-us-west-1.amazonaws.com/tcc-development/apple-touch-icon.png">
+    <link rel="apple-touch-startup-image" href="/launch.png">
+
+    <!-- Stylesheet Libraries -->
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'third_party', media: 'all' %>
+
+    <!-- JavaScript Libraries -->
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/bfe2960c53.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <%= render 'shared/links_header' %>
+    <main role="main">
+      <div class="jumbotron" style="height: 45vh;">
+        <div class="container" style="padding-top: 100px;">
+          <h1 class="display-3">Full Stack Web Developer Test Application</h1>
+          <p>This is a non-functioning web application used for testing Full Stack Web Developers. Check the Readme file for the bugs and enhancements to fix and code.</p>
+        </div>
+      </div>
+      <div class="container">   
+        <%= render "shared/alerts.html.erb" %>   
+
+      

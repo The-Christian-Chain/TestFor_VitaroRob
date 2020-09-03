@@ -1,0 +1,23 @@
+<h3>Your profile is complete!</h3>
+<p>Would you like to publish your profile?</p>
+<div class="row">
+  <div class="col-4">
+    <div class="row">
+      <div class="col-6">
+        <%= form_with(model: @profile, local: true) do |f| %>
+          <%= render 'profiles/setup_profile/form/errors' %>
+
+          <div class="actions">
+            <%= f.hidden_field :published, id: :profile_published, value: true %>
+            <%= f.submit "Publish Profile", class: 'btn btn-success' %>
+          </div>
+
+        <% end %>
+      </div>
+      <div class="col-6">
+        <%= link_to 'View Your Profile', member_profile_path(user_name: @profile.user_name), class: "btn btn-primary" %>
+      </div>
+    </div>
+  <div class="col-8"></div>
+  </div>
+</div>

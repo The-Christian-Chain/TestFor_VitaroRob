@@ -1,0 +1,123 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Member:</strong>
+  <%= @profile.member %>
+</p>
+
+<p>
+  <strong>Provider</strong>
+  <%= @profile.provider %>
+</p>
+
+<p>
+  <strong>Universal User ID</strong>
+  <%= @profile.universal_id %>
+</p>
+
+<p>
+  <strong>First Name</strong>
+  <%= @profile.first_name %>
+</p>
+
+<p>
+  <strong>Middle Name</strong>
+  <%= @profile.middle_name %>
+</p>
+
+<p>
+  <strong>Last Name</strong>
+  <%= @profile.last_name %>
+</p>
+
+<p>
+  <strong>User Name</strong>
+  <%= @profile.user_name %>
+</p>
+
+<p>
+  <strong>Gender</strong>
+  <%= @profile.gender %>
+</p>
+
+<p>
+  <strong>Avatar</strong>
+  <%= @profile.avatar %>
+</p>
+
+<p>
+  <strong>Birthday</strong>
+  <%= @profile.birthday %>
+</p>
+
+<p>
+  <strong>Phone Number</strong>
+  <%= @profile.phone %>
+</p>
+
+<p>
+  <strong>Address 1</strong>
+  <%= @profile.address1 %>
+</p>
+
+<p>
+  <strong>Address 2</strong>
+  <%= @profile.address2 %>
+</p>
+
+<p>
+  <strong>City</strong>
+  <%= @profile.city %>
+</p>
+
+<p>
+  <strong>State</strong>
+  <%= @profile.state %>
+</p>
+
+<p>
+  <strong>Zip Code</strong>
+  <%= @profile.zip_code %>
+</p>
+
+<p>
+  <strong>TCC Profile</strong>
+  <%= @profile.tcc_profile %>
+</p>
+
+<p>
+  <strong>Facebook Profile</strong>
+  <%= @profile.facebook %>
+</p>
+
+<p>
+  <strong>Twitter Profile</strong>
+  <%= @profile.twitter %>
+</p>
+
+<p>
+  <strong>Instagram Profile</strong>
+  <%= @profile.instagram %>
+</p>
+
+<p>
+  <strong>Pinterest Profile</strong>
+  <%= @profile.pinterest %>
+</p> 
+
+<p>
+  <strong>LinkedIn Profile</strong>
+  <%= @profile.linkedin %>
+</p> 
+
+<p>
+  <strong>Motto</strong>
+  <%= @profile.motto %>
+</p>
+
+Profile created on: <%= @profile.tcc_created %> <br>
+Profile last updated on: <%= @profile.tcc_updated %> <br>
+Last signed in on: <%= @profile.member.last_sign_in_at.strftime("%A, %B %d, %Y at %I:%M %P (%Z %z)")  %> <br>
+
+<%= link_to 'Edit', edit_profile_page_path(user_name: @profile.user_name) %> |
+<%= link_to 'Back', profiles_path %>

@@ -1,0 +1,101 @@
+<%= form_for @post do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+<% unless @post.id.nil? %>
+  <div class="field">
+    <%= form.label :slug %>
+    <%= form.text_field :slug %>
+  </div>
+<% end %>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.text_field :image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+  
+  <h4>Sections</h4>
+  <div class="field">
+    <%= form.text_area :sections_only, placeholder: "Sections separated with comma" %>
+  </div>
+
+  <h4>Categories</h4>
+  <div class="field">
+    <%= form.text_area :categories_only, placeholder: "Categories separated with comma" %>
+  </div>
+
+  <h4>Tags</h4>
+  <div class="field">
+    <%= form.text_area :tags_only, placeholder: "Tags separated with comma" %>
+  </div>
+
+    <div class="field">
+    <%= form.label :allow_comments %>
+    <%= form.select :allow_comments, Post::ALLOW_COMMENTS %>
+  </div>
+
+  <div class="field">
+    <%= form.label :subscription %>
+    <%= form.select :subscription, Post::SUBSCRIPTION  %>
+  </div>
+
+  <% if @can_publish_post %>
+    <h4>Advanced Attributes</h4>
+
+    <div class="field">
+      <%= form.label :status %>
+      <%= form.select :status, Post::STATUS %>
+    </div>
+
+    <div class="field">
+      <%= form.label :visibility %>
+      <%= form.select :visibility, Post::VISIBILITY %>
+    </div>
+
+    <div class="field">
+      <%= form.label :password %>
+      <%= form.text_field :password %>
+    </div>
+
+    <div class="field">
+      <%= form.label :archived %>
+      <%= form.select :archived, Post::ARCHIVE %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<h4>Sections Available</h4>
+<p><%= section_links(@sections) %></p>
+
+<h4>Categories Available</h4>
+<p><%= category_links(@categories) %></p>
+
+<h4>Tags Available</h4>
+<p><%= tag_links(@tags) %></p>

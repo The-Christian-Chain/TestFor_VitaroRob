@@ -1,0 +1,2 @@
+json.extract! profile,  :id, :member_id, :provider, :universal_id, :first_name, :middle_name, :last_name, :user_name, :gender, :avatar, :avatar_main, :avatar_thumb, :avatar_nav, :birthday, :phone, :address1, :address2, :city, :state, :zip_code, :long, :lat, :tcc_profile, :facebook, :twitter, :instagram, :pinterest, :linkedin, :motto, :tcc_created, :tcc_updated, :created_at, :updated_at
+json.url profile_url(profile, format: :json)

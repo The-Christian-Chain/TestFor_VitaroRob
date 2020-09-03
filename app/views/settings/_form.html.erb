@@ -1,0 +1,167 @@
+<%= form_with(model: setting, local: true) do |form| %>
+  <% if setting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(setting.errors.count, "error") %> prohibited this setting from being saved:</h2>
+
+      <ul>
+      <% setting.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :author %>
+    <%= form.text_field :author, id: :setting_author %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ministry_name %>
+    <%= form.text_field :ministry_name, id: :setting_ministry_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :site_name %>
+    <%= form.text_field :site_name, id: :setting_site_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :keywords %>
+    <%= form.text_field :keywords, id: :setting_keywords %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :setting_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :motto %>
+    <%= form.text_area :motto, id: :setting_motto %>
+  </div>
+
+  <div class="field">
+    <%= form.label :launch_date %>
+    <%= form.datetime_select :launch_date, id: :setting_launch_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :google_analytics %>
+    <%= form.text_field :google_analytics, id: :setting_google_analytics %>
+  </div>
+
+  <div class="field">
+    <%= form.label :primary_color %>
+    <%= form.text_field :primary_color, id: :setting_primary_color %>
+  </div>
+
+  <div class="field">
+    <%= form.label :secondary_color %>
+    <%= form.text_field :secondary_color, id: :setting_secondary_color %>
+  </div>
+
+  <div class="field">
+    <%= form.label :logo %>
+    <%= form.text_field :logo, id: :setting_logo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :favicon %>
+    <%= form.text_field :favicon, id: :setting_favicon %>
+  </div>
+
+  <div class="field">
+    <%= form.label :apple_touch %>
+    <%= form.text_field :apple_touch, id: :setting_apple_touch %>
+  </div>
+
+  <div class="field">
+    <%= form.label :apple_touch_152 %>
+    <%= form.text_field :apple_touch_152, id: :setting_apple_touch_152 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :apple_touch_167 %>
+    <%= form.text_field :apple_touch_167, id: :setting_apple_touch_167 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :apple_touch_180 %>
+    <%= form.text_field :apple_touch_180, id: :setting_apple_touch_180 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :apple_touch_startup %>
+    <%= form.text_field :apple_touch_startup, id: :setting_apple_touch_startup %>
+  </div>
+
+  <div class="field">
+    <%= form.label :website %>
+    <%= form.text_field :website, id: :setting_website %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :setting_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone, id: :setting_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address1 %>
+    <%= form.text_field :address1, id: :setting_address1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address2 %>
+    <%= form.text_field :address2, id: :setting_address2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city, id: :setting_city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.text_field :state, id: :setting_state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zip_code %>
+    <%= form.text_field :zip_code, id: :setting_zip_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :facebook %>
+    <%= form.text_field :facebook, id: :setting_facebook %>
+  </div>
+
+  <div class="field">
+    <%= form.label :twitter %>
+    <%= form.text_field :twitter, id: :setting_twitter %>
+  </div>
+
+  <div class="field">
+    <%= form.label :instagram %>
+    <%= form.text_field :instagram, id: :setting_instagram %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pinterest %>
+    <%= form.text_field :pinterest, id: :setting_pinterest %>
+  </div>
+
+  <div class="field">
+    <%= form.label :linkedin %>
+    <%= form.text_field :linkedin, id: :setting_linkedin %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

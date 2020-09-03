@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Member ID</th>
+      <th>User Name</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email Address</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @profiles.each do |profile| %>
+      <tr>
+        <td><%= profile.member_id %></td>
+        <td><%= link_to profile.user_name, profile %></td>
+        <td><%= profile.first_name %></td>
+        <td><%= profile.last_name %></td>
+        <td><%= profile.city + ', ' + profile.state %></td>
+        <% @member = Member.find(profile.member_id) %>
+        <td><%= @member.email %></td>
+        <td><%= link_to 'Edit', edit_profile_page_path(user_name: profile.user_name) %></td>
+        <td><%= link_to 'Delete Profile', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Profile', create_profile_path %>

@@ -1,0 +1,17 @@
+<%
+  unless @members.nil?
+    members = @members
+  end
+  
+  members.each do |m|
+    if m.id == comment.member_id
+      @member = m
+      break
+    end
+  end
+%>  
+  <div>
+    <p>By: <%= @member.user_name %></br>
+    Posted: <%= time_ago_in_words(comment.created_at) %> ago</br>
+    <%= comment.text %></p>
+  </div>
