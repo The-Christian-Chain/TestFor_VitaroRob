@@ -70,7 +70,7 @@ gem 'friendly_id',            '~> 5.3.0', require: "friendly_id"
 
 # Design Gems
 gem 'font-awesome-rails'                    # Text Icons
-gem 'redcarpet',              '~> 3.5.0'    # Markdown
+gem 'redcarpet',              '~> 3.5.1'    # Markdown
 
 # Image upload and processing
 gem 'carrierwave',            '~> 2.0.2'
