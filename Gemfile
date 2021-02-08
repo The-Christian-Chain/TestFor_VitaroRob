@@ -73,7 +73,7 @@ gem 'font-awesome-rails'                    # Text Icons
 gem 'redcarpet',              '~> 3.5.0'    # Markdown
 
 # Image upload and processing
-gem 'carrierwave',            '~> 2.0.2'
+gem 'carrierwave',            '~> 2.1.1'
 gem 'carrierwave-aws'
 gem "mini_magick" 
 
